@@ -185,11 +185,13 @@ class ZefyrScope extends ChangeNotifier {
     assert(isEditable);
     assert(!_disposed);
     _focusScope.requestFocus(_focusNode);
+    _controller.onToolbarVisibilityChange(true);
   }
 
   void hideKeyboard() {
     assert(isEditable);
     assert(!_disposed);
+    _controller.toolbarStatusChanged(false);
     _focusNode.unfocus();
   }
 
