@@ -27,13 +27,16 @@ enum FocusOwner {
 
 /// Controls instance of [ZefyrEditor].
 class ZefyrController extends ChangeNotifier {
-  ZefyrController(NotusDocument document)
+  ZefyrController(NotusDocument document, {Function this.onToolbarVisibilityChange})
       : assert(document != null),
         _document = document;
 
   /// Zefyr document managed by this controller.
   NotusDocument get document => _document;
   NotusDocument _document;
+
+  /// Function that is called when toolbar visibility is changed
+  Function onToolbarVisibilityChange;
 
   /// Currently selected text within the [document].
   TextSelection get selection => _selection;
