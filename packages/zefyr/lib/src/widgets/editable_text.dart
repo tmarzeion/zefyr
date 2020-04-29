@@ -150,9 +150,12 @@ class _ZefyrEditableTextState extends State<ZefyrEditableText>
     super.build(context); // See AutomaticKeepAliveState.
 
     Widget body = Container(
-      alignment: Alignment.centerLeft,
       height: 5000,
-        child: Column(children: _buildChildren(context))
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: _buildChildren(context))
     );
     if (widget.padding != null) {
       body = Padding(padding: widget.padding, child: body);
