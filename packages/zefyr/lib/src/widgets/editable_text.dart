@@ -152,7 +152,7 @@ class _ZefyrEditableTextState extends State<ZefyrEditableText>
     Widget body = Container(
       height: 5000,
         color: Colors.green,
-        child: ListBody(children: _buildChildren(context))
+        child: Column(children: _buildChildren(context))
     );
     if (widget.padding != null) {
       body = Padding(padding: widget.padding, child: body);
