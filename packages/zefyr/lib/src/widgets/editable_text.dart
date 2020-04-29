@@ -40,6 +40,7 @@ class ZefyrEditableText extends StatefulWidget {
     this.mode = ZefyrMode.edit,
     this.padding = const EdgeInsets.symmetric(horizontal: 16.0),
     this.physics,
+    this.scrollController,
     this.keyboardAppearance = Brightness.light,
   })  : assert(mode != null),
         assert(controller != null),
@@ -68,6 +69,7 @@ class ZefyrEditableText extends StatefulWidget {
 
   /// Controls physics of scrollable text field.
   final ScrollPhysics physics;
+  final ScrollController scrollController;
 
   /// Optional delegate for building the text selection handles and toolbar.
   ///
@@ -154,7 +156,7 @@ class _ZefyrEditableTextState extends State<ZefyrEditableText>
 
     body = SingleChildScrollView(
       physics: widget.physics,
-      controller: _scrollController,
+      controller: widget.scrollController,
       child: body,
     );
 
@@ -222,7 +224,6 @@ class _ZefyrEditableTextState extends State<ZefyrEditableText>
   // Private members
   //
 
-  final ScrollController _scrollController = ScrollController();
   ZefyrRenderContext _renderContext;
   CursorTimer _cursorTimer;
   InputConnectionController _input;
