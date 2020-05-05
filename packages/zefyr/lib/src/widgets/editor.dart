@@ -69,7 +69,7 @@ class ZefyrEditor extends StatefulWidget {
   /// Controls physics of scrollable editor.
   final ScrollPhysics physics;
   final ScrollController scrollController;
-  final int height;
+  final double height;
 
   /// Padding around editable area.
   final EdgeInsets padding;
@@ -92,7 +92,7 @@ class _ZefyrEditorState extends State<ZefyrEditor> {
   GlobalKey<ZefyrToolbarState> _toolbarKey;
   ZefyrScaffoldState _scaffold;
   ScrollController _scrollController;
-  int _height;
+  double _height;
 
   bool get hasToolbar => _toolbarKey != null;
 

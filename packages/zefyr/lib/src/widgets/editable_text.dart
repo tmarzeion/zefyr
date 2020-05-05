@@ -71,7 +71,7 @@ class ZefyrEditableText extends StatefulWidget {
   /// Controls physics of scrollable text field.
   final ScrollPhysics physics;
   final ScrollController scrollController;
-  final int height;
+  final double height;
 
   /// Optional delegate for building the text selection handles and toolbar.
   ///
